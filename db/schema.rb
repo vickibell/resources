@@ -11,6 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2) do
+
+  create_table "programs", force: :cascade do |t|
+    t.integer  "venue_id"
+    t.string   "program_name"
+    t.integer  "age_start"
+    t.integer  "age_end"
+    t.string   "cost"
+    t.string   "hours_open"
+    t.string   "hours_close"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "username"
+    t.string   "email"
+    t.string   "password"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "venues", force: :cascade do |t|
+    t.string   "venue_type"
+    t.string   "venue_name"
+    t.string   "venue_address"
+    t.string   "phone"
+    t.string   "website"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
